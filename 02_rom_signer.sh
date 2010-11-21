@@ -1,0 +1,1 @@
+tools/rom_signer.sh
