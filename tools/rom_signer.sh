@@ -10,7 +10,9 @@ cd $rom_path
 
 zip -r update_unsigned.zip ./*
 
-java -jar $sign_tools/signapk.jar testkey.x509.pem testkey.pk8 $rom_path/update_unsigned.zip $rom_path/update_signed_$(date '+%Y:%m:%d +%H:%M:%S').zip \
+cd $sign_tools
 
-&& rm $rom_path/update_unsigned.zip
+java -jar signapk.jar testkey.x509.pem testkey.pk8 $rom_path/update_unsigned.zip $rom_path/../update_signed_$(date '+%Y_%m_%d').zip
+
+rm $rom_path/update_unsigned.zip
 
